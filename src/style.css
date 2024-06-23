@@ -1,0 +1,595 @@
+* {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.mainBoard .registration {
+  color: rgb(65, 1, 112);
+}
+
+/* Navigation and menu */
+
+nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    max-width: 100vw;
+    padding: 5px 15px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(243, 228, 249);
+    height: 10vh;
+    border-bottom: 1.5px solid rgb(136, 90, 168);
+  }
+  
+nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+.triggerMenu img {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 5px;
+  right: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(172, 170, 170, 0.61);
+}
+
+.dropdownMenu {
+  position: absolute;
+  background-color: rgb(136, 90, 168);
+  color: white;
+  top: 65px;
+  right: 15px;
+  width: 180px;
+  padding: 5px;
+  border-radius: 10px;
+  height: 190px;
+}
+
+/*Create little arrow to connect dropdown menu and avatar*/
+.dropdownMenu::before {
+  content: '';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  background: rgb(136, 90, 168);
+  transform: rotate(45deg);
+}
+
+/* Layout and style for dropdown menu and search menu from floating button. */
+
+.searchMenu h3, .dropdownMenu h3 {
+  width: 100%;
+  height: 15%;
+  align-content: space-around;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(199, 163, 210);
+}
+
+.searchMenu ul, .dropdownMenu ul {
+  padding: 0;
+  list-style-type: none;
+  align-content: space-around;
+  justify-content: center;
+  text-align: center;
+}
+
+.searchMenu ul li, .dropdownMenu ul li {
+  height: 30px;
+  margin-bottom: 10px;
+  color: rgb(227, 205, 236);
+  cursor: pointer;
+}
+
+.dropdownMenu ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 200;
+}
+
+.searchMenu a {
+  color: rgb(227, 205, 236);
+  text-decoration: none;
+}
+
+.searchMenu {
+  position: fixed;
+  z-index: 1000;
+  background-color: rgb(136, 90, 168);
+  bottom: 90px;
+  right: 15px;
+  width: 180px;
+  padding: 5px;
+  border-radius: 10px;
+  height: 240px;
+}
+
+/*Create little arrow to connect menu and float button*/
+.searchMenu::before {
+  content: '';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  bottom: -5px;
+  right: 20px;
+  background: rgb(136, 90, 168);
+  transform: rotate(45deg);
+}
+
+.dropdownMenu.active, .searchMenu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdownMenu.inactive, .searchMenu.inactive {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.delUser {
+  background: none;
+  border: none;
+  margin: inherit;
+  font: inherit;
+  cursor: pointer;
+  color: rgb(227, 205, 236);
+}
+
+/* General styling */
+
+.themeButton {
+    border-radius: 5px;
+    background-color: rgb(173, 124, 209);
+    border: 1px solid black;
+    color: white;
+    padding: 7px 10px;
+    text-align: center;
+    font-size: 15px;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.welcometext {
+  padding-left: 10vh;
+  color: rgb(65, 1, 112);
+}
+  
+.introText {
+  padding-left: 10vh;
+}
+
+form input {
+  display: grid;
+  max-width: 30ch;
+  margin: 5px;
+  padding: 10px;
+}
+
+.buttonArea {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.statButton {
+  border-radius: 5px;
+  background-color: rgb(173, 124, 209);
+  border: 1px solid black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 12px;
+  margin: 5px;
+}
+
+.registration div {
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Error page layout */
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(245, 165, 165, 0.756);
+  color: black;
+  font-size: larger;
+}
+
+/* Forms and card area for incomes, budgets and saving goals*/
+
+.newBudget {
+  margin-left: 10vh;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  width: 320px;
+  height: 335px;
+  border: 2px solid rgb(173, 124, 209);
+  background-color: rgb(243, 228, 249);
+  color: rgb(65, 1, 112);
+  border-radius: 30px;
+  grid-area: 5 / 1;
+}
+
+.newSaving {
+  margin-left: 5vh;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  width: 320px;
+  height: 335px;
+  border: 2px solid rgb(173, 124, 209);
+  background-color: rgb(243, 228, 249);
+  color: rgb(65, 1, 112);
+  border-radius: 30px;
+  grid-area: 5 / 2;
+}
+
+.addIncomes {
+  margin-left: 10vh;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  width: 320px;
+  height: 220px;
+  border: 2px solid rgb(173, 124, 209);
+  background-color: rgb(243, 228, 249);
+  color: rgb(65, 1, 112);
+  border-radius: 30px;
+  grid-area: 3 / 1;
+}
+
+.addIncomes input {
+  margin-bottom: 15px;
+  margin-left: 0;
+}
+
+.addIncomes p {
+  margin-top: 10px;
+  font-size: small;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 100vw;
+}
+
+.newExpense {
+  margin-left: 10vh;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  width: 320px;
+  height: 335px;
+  border: 2px solid rgb(173, 124, 209);
+  background-color: rgb(243, 228, 249);
+  color: rgb(65, 1, 112);
+  border-radius: 30px;
+  grid-area: 7 / 1;
+}
+
+.newDeposit {
+  margin-left: 5vh;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  width: 320px;
+  height: 335px;
+  border: 2px solid rgb(173, 124, 209);
+  background-color: rgb(243, 228, 249);
+  color: rgb(65, 1, 112);
+  border-radius: 30px;
+  grid-area: 7 / 2;
+}
+
+.newDeposit .themeButton, .newExpense .themeButton, .newBudget .themeButton,
+.newSaving .themeButton, .addIncomes .themeButton {
+  display: block;
+  margin-left: 55px;
+  margin-top: 10px;
+  width: 140px;
+}
+
+.newIncome .themeButton {
+  margin-left: 28vh;
+  width: 140px;
+}
+
+.newIncome {
+  margin-left: 5vh;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  width: 85vh;
+  height: 220px;
+  border: 2px solid rgb(173, 124, 209);
+  background-color: rgb(243, 228, 249);
+  border-radius: 30px;
+  grid-area: 3 / 2;
+  color: rgb(65, 1, 112);
+}
+
+.newIncome h2 {
+  margin-bottom: 10px;
+}
+
+/* Layout for 'add new income' form to get horizontal look */
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 1vh;
+}
+  
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.left, .right {
+  width: 30%;
+}
+  
+.middle {
+  width: 30%;
+}
+
+.left input, .right input, .middle input {
+  width: 20vh;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+} 
+
+.right select {
+  width: 20vh;
+  height: 38px;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+}
+
+select {
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  width: 245px;
+  height: 35px;
+}
+
+/* Styles for intertitles */
+
+.addNewArea .intertitle1 {
+  margin-left: 10vh;
+  grid-area: 2 / span 2;
+  color: rgb(65, 1, 112);
+}
+
+.addNewArea .intertitle2 {
+  margin-left: 10vh;
+  grid-area: 4 / span 2;
+  color: rgb(65, 1, 112);
+}
+
+.addNewArea .intertitle3 {
+  margin-left: 10vh;
+  grid-area: 6 / span 2;
+  color: rgb(65, 1, 112);
+}
+
+/* Style for saving card and budget card -elements and area of them. */
+
+.CardArea {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.savingCard, .savingCardComplete, .budgetCard {
+  width: 300px;
+  height: 170px;
+  padding: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 5%;
+  border: 2px solid rgb(173, 124, 209);
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.savingCard, .budgetCard {
+  background-color: rgb(243, 228, 249);
+  color: rgb(65, 1, 112);
+}
+
+.cardButtonArea {
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+}
+
+.budgetCard .budgetdate, .savingCard .goalDate {
+  font-size: smaller;
+  margin-top: 5px;
+  padding: 0;
+  float: right;
+}
+
+.savingCard h3, .budgetCard h3 {
+  width: 50%;
+  font-size: larger;
+  padding: 0;
+  margin: 0;
+}
+
+.savingCard .cardInfo, .budgetCard .cardInfo {
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.savingCard .progress, .budgetCard .progress {
+  width: 100vw;
+  height: 40px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 10px;
+  accent-color: rgb(173, 124, 209);
+}
+
+.savingCard .cardfooter, .budgetCard .cardfooter {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.savings, .budgets {
+  margin-left: 10vh;
+  color: rgb(65, 1, 112);
+}
+
+.complete {
+  opacity: 0.5;
+}
+
+/*This part includes layout for recent -pages and tables in them.*/
+
+.recent {
+  margin: 10vh;
+  color: rgb(65, 1, 112);
+}
+
+.expenseTable {
+  overflow-x: auto;
+  width: 80vw;
+  border: 1px solid black;
+  padding: 10px;
+  color: rgb(65, 1, 112);
+}
+
+.tableHeader {
+  background-color: rgb(243, 228, 249);
+}
+
+td {
+  font-size: large;
+  text-align: center;
+  padding: 5px;
+  width: 20%;
+}
+
+th {
+  font-size: larger;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  width: 50px;
+}
+
+tr {
+  width: 100vw;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.delAction {
+  font-size: smaller;
+  color: red;
+  cursor: pointer;
+}
+
+.changeNamePage {
+  margin: 15vh;
+}
+
+.changeNamePage h2 {
+  color: rgb(65, 1, 112);
+}
+
+.changeNamePage .currentName  {
+  color: rgb(65, 1, 112);
+  padding-left: 15px;
+  font-style: italic;
+  font-size: 200;
+}
+
+.changeNamePage .pwHox  {
+  color: rgb(65, 1, 112);
+  padding-left: 10px;
+  font-style: italic;
+  font-size: small;
+}
+
+/*Media queries for different screensizes*/
+
+@media screen and (min-width: 850px){
+  .registration {
+    display: flex;
+    margin: 10%;
+  }
+
+  .registration form {
+    margin-left: 15%;
+  }
+
+  .addNewArea {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+  }
+
+  .chartArea {
+    max-width: 50vw;
+  }
+
+}
+
+@media screen and (max-width: 849px) {
+  .registration div {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .newSaving, .newIncome, .newDeposit {
+    margin-left: 10vh;
+  }
+
+  .registration form {
+    margin-left: 70px;
+  }
+
+  .registration {
+    margin-top: 15vh;
+  }
+
+  .addNewArea {
+    display: inline;
+  }
+  
+  .addNewArea p, .addNewArea h2 {
+    z-index: 100;
+  }
+  
+  .chartArea {
+    max-width: 80vw;
+  }
+}
